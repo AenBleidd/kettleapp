@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kettle", "Kettle\Kettle.vcproj", "{EBAA6596-0B86-4C03-A029-9594DE786494}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBAA6596-0B86-4C03-A029-9594DE786494}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EBAA6596-0B86-4C03-A029-9594DE786494}.Debug|Win32.Build.0 = Debug|Win32
+		{EBAA6596-0B86-4C03-A029-9594DE786494}.Release|Win32.ActiveCfg = Release|Win32
+		{EBAA6596-0B86-4C03-A029-9594DE786494}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1205867971 c:\development\programs\kettle\kettle\kettle.rc
+	"resource.h"
+	"targetver.h"
+	"windows.h"
+
+1205866750 c:\development\programs\kettle\kettle\resource.h
+
+1205391910 c:\development\programs\kettle\kettle\targetver.h
+
+1205391911 c:\development\programs\kettle\kettle\stdafx.cpp
+	"stdafx.h"
+
+1208804468 c:\development\programs\kettle\kettle\stdafx.h
+	"targetver.h"
+	<windows.h>
+	<stdlib.h>
+	<malloc.h>
+	<memory.h>
+	<tchar.h>
+	"functions.h"
+	<shellapi.h>
+
+1208803990 c:\development\programs\kettle\kettle\functions.h
+
+1208801494 c:\development\programs\kettle\kettle\kettle.cpp
+	"stdafx.h"
+	"Kettle.h"
+
+1205391911 c:\development\programs\kettle\kettle\kettle.h
+	"resource.h"
+
