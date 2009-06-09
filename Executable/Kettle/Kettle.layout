@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_layout_file>
+<CodeBlocks_layout_file>
+	<File name="Kettle.cpp" open="1" top="1">
+		<Cursor position="1207" topLine="0"/>
+	</File>
+	<File name="stdafx.h" open="1" top="0">
+		<Cursor position="476" topLine="0"/>
+	</File>
+	<Expand folder="/Sources"/>
+	<Expand folder="/Headers"/>
+	<Expand folder="/Others"/>
+</CodeBlocks_layout_file>
