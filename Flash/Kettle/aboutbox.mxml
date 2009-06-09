@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	x="0"
+	y="0"
+	title="About">
+	<mx:Script>
+		<![CDATA[
+			import mx.managers.PopUpManager;
+			import flash.net.URLRequest;
+			private function gotoURL():void
+			{
+				var url:URLRequest = new URLRequest("http:lestat-soft.ucoz.ru");
+				navigateToURL(url,"_blank");
+			}
+		]]>
+	</mx:Script>
+	<mx:HBox>
+	<mx:VBox width="50%">
+		<mx:Image source="@Embed('MyPhoto.jpg')"/>
+	</mx:VBox>
+	<mx:VBox width="50%">
+		<mx:Text text="Таймер" textAlign="center" width="100%"/>
+		<mx:Text text="Flash version 1.0" textAlign="center" width="100%"/>
+		<mx:LinkButton label="Сайт разработчика" width="100%" click="gotoURL();"/>
+		<mx:Button label="OK" width="100%" click="PopUpManager.removePopUp(this);"/>
+	</mx:VBox>
+	</mx:HBox>
+</mx:TitleWindow>

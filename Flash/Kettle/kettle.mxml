@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	height="200"
+	width="250"
+	backgroundGradientColors="[0xCCCCCC, 0xFF0000]">
+	<mx:Script>
+		<![CDATA[
+			import flash.media.Sound;
+			import flash.media.SoundChannel;
+			import flash.utils.Timer;
+			import flash.events.TimerEvent;
+			import flash.events.Event;
+			[Embed(source="sound.mp3")]
+			private var soundClass:Class;
+			private var channel:SoundChannel;
+			private var smallSound:Sound = new soundClass() as Sound;
+			private var flag:int=0;
+			private function PlaySound():void
+			{	
+				StartButton.label = "Выключить";
+				flag = 1;		
+				channel = smallSound.play(0,65535,null);
+				timer.stop();
+			}
+			import mx.managers.PopUpManager;
+			import mx.containers.TitleWindow;
+			private var timer:Timer;
+			private function runtimer():void
+			{	
+				if (flag == 1)
+				{
+					stoptimer();
+				}	
+				else if (flag == 0)
+				{
+					Status.text="Запущен";
+					StartButton.label = "Работаем...";
+					var delay:uint = 1000;
+					var repeat:uint = parseInt(min.text, 10)*60;
+					timer = new Timer(delay, repeat);
+					timer.addEventListener(TimerEvent.TIMER_COMPLETE, onTimerComplete);	
+					flag = 2;
+					timer.start();
+				}
+			}
+			private function stoptimer():void
+			{
+				Status.text="Остановлен";
+				StartButton.label = "Поставить таймер";
+				flag = 0;
+				min.text="";
+				channel.stop();
+			}
+			private function onTimerComplete(event:TimerEvent):void
+			{
+				PlaySound();
+			}
+			private function showabout():void
+			{
+				var ab:aboutbox=aboutbox(PopUpManager.createPopUp(this, aboutbox, true));
+			}				
+		]]>
+	</mx:Script>
+	<mx:NumberValidator
+		source="{min}"
+		property="text"
+		integerError="Введите число!"
+		minValue="1"
+		maxValue="1440"
+		trigger="{StartButton}"
+		triggerEvent="click"
+		valid="runtimer();"/>
+	<mx:HBox width="100%" horizontalAlign="center">
+		<mx:Text text="Поставить таймер на "/>
+		<mx:TextInput id="min" width="30"/>
+		<mx:Text text=" минут"/>
+	</mx:HBox>
+	<mx:Button
+		 id="StartButton"
+		 label="Поставить таймер"
+		 height="60"
+		 width="200"
+		 fontSize="14"/>
+	<mx:HBox width="100%">
+		<mx:Text
+			id="Status"
+			text="Не запущен"
+			fontSize="14"/>
+		<mx:Spacer width="100%"/>
+		<mx:LinkButton
+		 id="AboutButton"
+		 label="About"
+		 color="#0000FF"
+		 click="showabout();"/>
+	</mx:HBox>
+</mx:Application>
